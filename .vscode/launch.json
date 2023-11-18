@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Fasm",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "fasm ${file} && ld ${fileBasenameNoExtension}.o -o ${fileBasenameNoExtension} && rm ${fileBasenameNoExtension}.o && ./${fileBasenameNoExtension} && rm ${fileBasenameNoExtension}"
+        },
+        {
+            "name": "FastRun Fasm",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "fasm ${file} ${fileDirname}/compiled/${fileBasenameNoExtension} && chmod +x ${fileDirname}/compiled/${fileBasenameNoExtension} && ${fileDirname}/compiled/${fileBasenameNoExtension} $$ sudo rm ${fileDirname}/compiled/${fileBasenameNoExtension}"
+        }
+    ]
+}

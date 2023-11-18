@@ -1,0 +1,23 @@
+Name: F5 Anything
+Id: discretegames.f5anything
+Description: Put any terminal or VSCode command in a launch.json to run it with F5.
+Version: 1.2.0
+Publisher: discretegames
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=discretegames.f5anything
+
+
+<=== One of these ===>
+Name: fasm for vscode
+Id: Paval-from-Belarus.fasm-assembly
+Description: Fasm x86_64 assembly syntax highlighting and etc
+Version: 0.0.6
+Publisher: Paval-from-Belarus
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=Paval-from-Belarus.fasm-assembly
+
+Name: Fasm highlight
+Id: amatilda.vscode-fasm
+Description: Fasm x86_64 assembly syntax highlighting
+Version: 0.0.3
+Publisher: amatilda
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=amatilda.vscode-fasm
+<=== One of these ===>
