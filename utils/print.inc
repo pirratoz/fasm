@@ -75,13 +75,18 @@ print:
         ret
 
 println:
+    .__return:
+        push rsi
+        call print.ln
+        pop rsi
+        ret
+    
     .char:
         call print.char
+        call .__return
+        ret
 
     .integer:
         call print.integer
-
-    push rsi
-    call print.ln
-    pop rsi
-    ret
+        call .__return
+        ret
