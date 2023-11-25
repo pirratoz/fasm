@@ -11,20 +11,16 @@ source_array.length = $ - source_array
 sorted_array db "Sorted Array:", ln, 0
 sorted_array.length = $ - sorted_array
 
-array dd 15, 10, 3, 4, 1, 0, 50, 68, 7, 2, 5, 2, 4
-array.element_size = 4
+array dq 15, 10, 3, 4, 1, 0, -50, 68, 7, 2, 5, -2, 4
+array.element_size = 8
 array.size = ($ - array) / array.element_size
-
-
-; note: does not work with negative numbers
-
 
 print_array:
     xor rcx, rcx
     jmp .for
 
     .for:
-        mov esi, [array + array.element_size * rcx]
+        mov rsi, [array + array.element_size * rcx]
 
         push rcx
         call print.integer
@@ -64,20 +60,20 @@ array_sort:
             pop rcx     ; take number_current_element
             push rcx
 
-            mov eax, [array + array.element_size * rcx]
+            mov rax, [array + array.element_size * rcx]
             inc rcx
-            mov ebx, [array + array.element_size * rcx]
+            mov rbx, [array + array.element_size * rcx]
             dec rcx
 
-            cmp eax, ebx
+            cmp rax, rbx
             jg .move_left
             jmp .continue_for
 
             .move_left:
                 inc rcx
-                mov [array + array.element_size * rcx], eax
+                mov [array + array.element_size * rcx], rax
                 dec rcx
-                mov [array + array.element_size * rcx], ebx
+                mov [array + array.element_size * rcx], rbx
             
             .continue_for:
                 nop
