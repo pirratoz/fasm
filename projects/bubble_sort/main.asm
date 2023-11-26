@@ -61,22 +61,15 @@ array_sort:
             push rcx
 
             mov rax, [array + array.element_size * rcx]
-            inc rcx
-            mov rbx, [array + array.element_size * rcx]
-            dec rcx
+            mov rbx, [array + array.element_size * (rcx + 1)]
 
             cmp rax, rbx
-            jg .move_left
-            jmp .continue_for
+            jng .continue_for
 
-            .move_left:
-                inc rcx
-                mov [array + array.element_size * rcx], rax
-                dec rcx
-                mov [array + array.element_size * rcx], rbx
+            mov [array + array.element_size * (rcx + 1)], rax
+            mov [array + array.element_size * rcx], rbx
             
-            .continue_for:
-                nop
+            .continue_for: nop
 
             pop rcx
             inc rcx
