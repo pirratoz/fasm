@@ -43,7 +43,6 @@ print_array:
 
 
 array_sort:
-    xor rcx, rcx
     mov rcx, array.size
 
     .first_for:
@@ -53,8 +52,7 @@ array_sort:
         dec rcx
         push rcx
 
-        xor rcx, rcx
-        push rcx
+        push 0          ; starting index of the second loop
 
         .second_for:
             pop rcx     ; take number_current_element
